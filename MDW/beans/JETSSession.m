@@ -20,7 +20,7 @@
         self.color = color_;
         self.location = location_;
         self.id = id_;
-        self.description = description_;
+        self.desc = description_;
         self.status = status_;
         self.sessionType = sessionType_;
         self.liked = liked_;

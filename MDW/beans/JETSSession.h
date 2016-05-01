@@ -15,8 +15,8 @@
 @property NSString *color;
 @property NSString *location;
 @property long id;
-@property NSString *description;
-@property int status;
+@property NSString *desc;
+@property NSInteger status;
 @property NSString *sessionType;
 @property NSString *liked;
 @property NSMutableArray *sessionTags;

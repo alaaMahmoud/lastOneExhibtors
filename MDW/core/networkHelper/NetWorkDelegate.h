@@ -10,6 +10,6 @@
 
 @protocol NetWorkDelegate <NSObject>
 
--(void) handle:(NSMutableArray *) data;
+-(void) handle:(NSArray *) data;
 
 @end

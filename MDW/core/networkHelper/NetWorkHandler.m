@@ -38,7 +38,7 @@
         [profile setMiddleName:[profileDic objectForKey:@"middleName"]];
         [profile setLastName:[profileDic objectForKey:@"lastName"]];
         [profile setEmail:[profileDic objectForKey:@"email"]];
-        [_netDelegate handle: mydic];
+        [_netDelegate handle: [mydic allValues]] ;
         
     } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
         UIAlertView *alert = [[UIAlertView alloc]initWithTitle:@"Error retreiving data" message:[error localizedDescription] delegate:nil cancelButtonTitle:@"Ok" otherButtonTitles:nil];
@@ -86,7 +86,7 @@
             }
         
         
-        [_netDelegate handle: mydic];
+        [_netDelegate handle: [mydic allValues]];
         
     } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
         UIAlertView *alert = [[UIAlertView alloc]initWithTitle:@"Error retreiving data" message:[error localizedDescription] delegate:nil cancelButtonTitle:@"Ok" otherButtonTitles:nil];
@@ -110,7 +110,6 @@
     operation.responseSerializer =[AFJSONResponseSerializer serializer];
     [operation setCompletionBlockWithSuccess:^(AFHTTPRequestOperation *operation, id responseObject) {
         mydic = (NSDictionary *)responseObject;
-        NSLog([mydic objectForKey: @"status"]);
         
         NSMutableArray *arrayOfSpeakers = [mydic objectForKey:@"result"];
         
@@ -148,7 +147,7 @@
         }
         
         
-        [_netDelegate handle: mydic];
+        [_netDelegate handle: [mydic allValues]];
         
     } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
         UIAlertView *alert = [[UIAlertView alloc]initWithTitle:@"Error retreiving data" message:[error localizedDescription] delegate:nil cancelButtonTitle:@"Ok" otherButtonTitles:nil];
@@ -201,7 +200,7 @@
  [session setName:[sessionDict objectForKey:@"name"]];
  //NSLog([session name]);
  [session setId:[[sessionDict objectForKey:@"id"] integerValue]];
- [session setDescription:[sessionDict objectForKey:@"description"]];
+ [session setDesc:[sessionDict objectForKey:@"description"]];
  [session setStatus:[[sessionDict objectForKey:@"status"] integerValue]];
  [session setSessionType:[sessionDict objectForKey:@"sessionType"]];
  [session setLiked:[sessionDict objectForKey:@"like"]];
@@ -214,8 +213,7 @@
 
      
  NSString *edateString=[sessionDict objectForKey:@"endDate"];
- double geteDate=[edateString doubleValue];
- [session setEndDate:getDate];
+ [session setEndDate:[edateString doubleValue]];
  [arrayOfSessions addObject:session];
  }
  
@@ -223,7 +221,7 @@
  [arrayOfAgendas addObject:agenda];
  }
  
- [_netDelegate handle: mydic];
+ [_netDelegate handle: [mydic allValues]];
  } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
  
  // 4
@@ -290,7 +288,7 @@
             [_exhibitor addObject:exhibitor];
         }
         
-        [_netDelegate handle: mydic];
+        [_netDelegate handle: [mydic allValues]];
     }
      
      

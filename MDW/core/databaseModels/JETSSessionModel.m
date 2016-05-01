@@ -78,7 +78,7 @@
         session.size = [rs stringForColumn:@"size"];
         session.color = [rs stringForColumn:@"color"];
         session.location = [rs stringForColumn:@"location"];
-        session.description = [rs stringForColumn:@"description"];
+        session.desc = [rs stringForColumn:@"description"];
         session.status = [rs intForColumn:@"status"];
         session.sessionType = [rs stringForColumn:@"sessionType"];
         session.liked = [rs stringForColumn:@"liked"];
@@ -135,7 +135,7 @@
         session.size = [rs stringForColumn:@"size"];
         session.color = [rs stringForColumn:@"color"];
         session.location = [rs stringForColumn:@"location"];
-        session.description = [rs stringForColumn:@"description"];
+        session.desc = [rs stringForColumn:@"description"];
         session.status = [rs intForColumn:@"status"];
         session.sessionType = [rs stringForColumn:@"sessionType"];
         session.liked = [rs stringForColumn:@"liked"];
@@ -188,7 +188,7 @@
         session.size = [rs stringForColumn:@"size"];
         session.color = [rs stringForColumn:@"color"];
         session.location = [rs stringForColumn:@"location"];
-        session.description = [rs stringForColumn:@"description"];
+        session.desc = [rs stringForColumn:@"description"];
         session.status = [rs intForColumn:@"status"];
         session.sessionType = [rs stringForColumn:@"sessionType"];
         session.liked = [rs stringForColumn:@"liked"];

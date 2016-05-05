@@ -31,10 +31,11 @@
     self.refreshControl=[[UIRefreshControl alloc] init];
     self.refreshControl.backgroundColor=[UIColor purpleColor];
     self.refreshControl.tintColor=[UIColor whiteColor];
-    self.refreshControl=[[UIRefreshControl alloc] init];
-    self.refreshControl.backgroundColor=[UIColor purpleColor];
-    self.refreshControl.tintColor=[UIColor whiteColor];
+    
     [self.refreshControl addTarget:self action:@selector(getLatestExhibitors) forControlEvents:UIControlEventValueChanged];
+      [self getLatestExhibitors];
+    [self performSelectorOnMainThread:@selector(reloadData) withObject:nil waitUntilDone:NO];
+  
     
     
 
@@ -42,9 +43,9 @@
     
     _barBtn.target = self.revealViewController;
     _barBtn.action = @selector(revealToggle:);
-    [self.view addGestureRecognizer:self.revealViewController.panGestureRecognizer];
+   [self.view addGestureRecognizer:self.revealViewController.panGestureRecognizer];
     UIGraphicsBeginImageContext(self.view.frame.size);
-    [[UIImage imageNamed:@"background.png"] drawInRect:self.view.bounds];
+   [[UIImage imageNamed:@"background.png"] drawInRect:self.view.bounds];
     UIImage *image = UIGraphicsGetImageFromCurrentImageContext();
     UIGraphicsEndImageContext();
     self.view.backgroundColor = [UIColor colorWithPatternImage:image];
@@ -85,20 +86,18 @@
     UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Error" message:@"Please check your connection" delegate:nil cancelButtonTitle:@"" otherButtonTitles:@"Ok", nil];
     
     [alert show];
-    //JETSExhibitorModel *m=[JETSExhibitorModel new];
-    
 
-    
-    
-    //responseData=responseData;
-   // NSLog(@"state func = 0");
-    //[self.tableView reloadData];
 
     
 }
 
 -(void)getLatestExhibitors{
-    [self performSelectorOnMainThread:@selector(reloadData) withObject:nil waitUntilDone:NO];
+    //[self performSelectorOnMainThread:@selector(reloadData) withObject:nil waitUntilDone:NO];
+    [self handleSuccess :responseData];
+    
+    
+    
+   
 
 }
 

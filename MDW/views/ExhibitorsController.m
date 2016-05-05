@@ -8,15 +8,38 @@
 
 #import "ExhibitorsController.h"
 #import "SWRevealViewController.h"
+#import "JETSExhibitor.h"
+#import "NetWorkHandler.h"
+#import "NetWorkDelegate.h"
+#import "NetWorkManager.h"
+#import "JETSExhibitorModel.h"
 
-@interface ExhibitorsController ()
+@interface ExhibitorsController (){
+    NSArray *responseData;
+    UIActivityIndicatorView *activity;
+}
 
 @end
 
 @implementation ExhibitorsController
+   
+
+
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    self.refreshControl=[[UIRefreshControl alloc] init];
+    self.refreshControl.backgroundColor=[UIColor purpleColor];
+    self.refreshControl.tintColor=[UIColor whiteColor];
+    self.refreshControl=[[UIRefreshControl alloc] init];
+    self.refreshControl.backgroundColor=[UIColor purpleColor];
+    self.refreshControl.tintColor=[UIColor whiteColor];
+    [self.refreshControl addTarget:self action:@selector(getLatestExhibitors) forControlEvents:UIControlEventValueChanged];
+    
+    
+
+   
+    
     _barBtn.target = self.revealViewController;
     _barBtn.action = @selector(revealToggle:);
     [self.view addGestureRecognizer:self.revealViewController.panGestureRecognizer];
@@ -25,6 +48,75 @@
     UIImage *image = UIGraphicsGetImageFromCurrentImageContext();
     UIGraphicsEndImageContext();
     self.view.backgroundColor = [UIColor colorWithPatternImage:image];
+}
+-(void)viewWillAppear:(BOOL)animated{
+    NetWorkManager *netMang=[NetWorkManager new];
+    NetWorkHandler *netcal=[netMang connect ];
+    [netcal getExhibitorWithEmail:@"asmaabadreldin@hotmail.com" WithDelgate:self];
+    
+}
+-(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    NSLog(@"%ld",(long)indexPath.row);
+    
+    [[UIApplication sharedApplication] openURL:[NSURL URLWithString:[responseData [indexPath.row] companyUrl]]];
+    
+}
+-(void) handleSuccess:(id) data{
+   
+
+    responseData =data;
+    
+    NSLog(@"%@",data);
+    NSLog(@"%d",[responseData count]);
+    
+    [self.tableView  reloadData];
+    [activity stopAnimating];
+    //[self performSelectorOnMainThread:@selector(reloadData) withObject:nil waitUntilDone:NO];
+    
+    
+    
+    
+}
+-(void) handleFaild{
+    
+    [activity stopAnimating];
+    
+    UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Error" message:@"Please check your connection" delegate:nil cancelButtonTitle:@"" otherButtonTitles:@"Ok", nil];
+    
+    [alert show];
+    //JETSExhibitorModel *m=[JETSExhibitorModel new];
+    
+
+    
+    
+    //responseData=responseData;
+   // NSLog(@"state func = 0");
+    //[self.tableView reloadData];
+
+    
+}
+
+-(void)getLatestExhibitors{
+    [self performSelectorOnMainThread:@selector(reloadData) withObject:nil waitUntilDone:NO];
+
+}
+
+- (void)reloadData
+{
+    // Reload table data
+    [self.tableView reloadData];
+    if(self.refreshControl){
+        
+        NSDateFormatter *formatter=[[NSDateFormatter alloc] init];
+        [formatter setDateFormat:@"MMM d,h:mm a"];
+        NSString *title=[NSString stringWithFormat:@"Last update: %@",[formatter stringFromDate:[NSDate date]]];
+        NSDictionary *attrsDictionary=[NSDictionary dictionaryWithObject:[UIColor whiteColor] forKey:NSForegroundColorAttributeName];
+        NSAttributedString *attributedTitle=[[NSAttributedString alloc]initWithString:title attributes:attrsDictionary];
+        self.refreshControl.attributedTitle=attributedTitle;
+        [self.refreshControl endRefreshing];
+        
+    }
 }
 
 - (void)didReceiveMemoryWarning {
@@ -36,24 +128,32 @@
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
 
     // Return the number of sections.
-    return 0;
+    return 1;
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
 
     // Return the number of rows in the section.
-    return 0;
+    return [responseData count];
+
 }
 
-/*
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
-    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:<#@"reuseIdentifier"#> forIndexPath:indexPath];
+    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"exhibitor" forIndexPath:indexPath];
     
+    
+    [cell.textLabel setText:[[responseData objectAtIndex:indexPath.row]companyName]];
+    cell.imageView.image = [UIImage imageNamed:@"exihiptors.png"];
+  //  cell.imageView.image = [UIImage imageWithData:[responseData[indexPath.row]imageEx]];
+    
+    cell.backgroundColor=[UIColor clearColor];
+  //  UIImage *image=[UIImage imageWithData:[responseData valueForKey:@"imageURL"]];
+   // cell.imageView.image=image;
     // Configure the cell...
     
     return cell;
 }
-*/
+
 
 /*
 // Override to support conditional editing of the table view.

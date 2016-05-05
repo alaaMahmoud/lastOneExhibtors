@@ -7,7 +7,12 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "UILabel+htmlViewer.h"
+#import "NetWorkDelegate.h"
 
-@interface ExhibitorsController : UITableViewController
+@interface ExhibitorsController : UITableViewController<NetWorkDelegate>
 @property (weak, nonatomic) IBOutlet UIBarButtonItem *barBtn;
+@property NSMutableArray *exhibitors;
+
+
 @end

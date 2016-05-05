@@ -33,8 +33,6 @@
 		611CA87D1CD0EA480003EA81 /* UIImageView+AFNetworking.m in Sources */ = {isa = PBXBuildFile; fileRef = 611CA86A1CD0EA480003EA81 /* UIImageView+AFNetworking.m */; };
 		611CA87E1CD0EA480003EA81 /* UIProgressView+AFNetworking.m in Sources */ = {isa = PBXBuildFile; fileRef = 611CA86D1CD0EA480003EA81 /* UIProgressView+AFNetworking.m */; };
 		611CA87F1CD0EA480003EA81 /* UIWebView+AFNetworking.m in Sources */ = {isa = PBXBuildFile; fileRef = 611CA86F1CD0EA480003EA81 /* UIWebView+AFNetworking.m */; };
-		611CA8871CD0EB280003EA81 /* NetWorkHandler.m in Sources */ = {isa = PBXBuildFile; fileRef = 611CA8841CD0EB280003EA81 /* NetWorkHandler.m */; };
-		611CA8881CD0EB280003EA81 /* NetWorkManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 611CA8861CD0EB280003EA81 /* NetWorkManager.m */; };
 		611CA8951CD0EC030003EA81 /* JETSAgenda.m in Sources */ = {isa = PBXBuildFile; fileRef = 611CA88C1CD0EC030003EA81 /* JETSAgenda.m */; };
 		611CA8961CD0EC030003EA81 /* JETSExhibitor.m in Sources */ = {isa = PBXBuildFile; fileRef = 611CA88E1CD0EC030003EA81 /* JETSExhibitor.m */; };
 		611CA8971CD0EC030003EA81 /* JETSProfile.m in Sources */ = {isa = PBXBuildFile; fileRef = 611CA8901CD0EC030003EA81 /* JETSProfile.m */; };
@@ -306,6 +304,9 @@
 		61B2707A1CD14680002274B9 /* SpeakersController.m in Sources */ = {isa = PBXBuildFile; fileRef = 61B270791CD14680002274B9 /* SpeakersController.m */; };
 		61B2707D1CD146A6002274B9 /* ExhibitorsController.m in Sources */ = {isa = PBXBuildFile; fileRef = 61B2707C1CD146A6002274B9 /* ExhibitorsController.m */; };
 		61B270821CD14D7D002274B9 /* menuBar.png in Resources */ = {isa = PBXBuildFile; fileRef = 61B270811CD14D7D002274B9 /* menuBar.png */; };
+		61EF69A11CD634810050CA3C /* exihiptors.png in Resources */ = {isa = PBXBuildFile; fileRef = 61EF69A01CD634810050CA3C /* exihiptors.png */; };
+		61EF69A81CD649BC0050CA3C /* NetWorkHandler.m in Sources */ = {isa = PBXBuildFile; fileRef = 61EF69A51CD649BC0050CA3C /* NetWorkHandler.m */; };
+		61EF69A91CD649BC0050CA3C /* NetWorkManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 61EF69A71CD649BC0050CA3C /* NetWorkManager.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -375,11 +376,6 @@
 		611CA86D1CD0EA480003EA81 /* UIProgressView+AFNetworking.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIProgressView+AFNetworking.m"; sourceTree = "<group>"; };
 		611CA86E1CD0EA480003EA81 /* UIWebView+AFNetworking.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIWebView+AFNetworking.h"; sourceTree = "<group>"; };
 		611CA86F1CD0EA480003EA81 /* UIWebView+AFNetworking.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIWebView+AFNetworking.m"; sourceTree = "<group>"; };
-		611CA8821CD0EB280003EA81 /* NetWorkDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NetWorkDelegate.h; sourceTree = "<group>"; };
-		611CA8831CD0EB280003EA81 /* NetWorkHandler.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NetWorkHandler.h; sourceTree = "<group>"; };
-		611CA8841CD0EB280003EA81 /* NetWorkHandler.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NetWorkHandler.m; sourceTree = "<group>"; };
-		611CA8851CD0EB280003EA81 /* NetWorkManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NetWorkManager.h; sourceTree = "<group>"; };
-		611CA8861CD0EB280003EA81 /* NetWorkManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NetWorkManager.m; sourceTree = "<group>"; };
 		611CA88B1CD0EC030003EA81 /* JETSAgenda.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JETSAgenda.h; sourceTree = "<group>"; };
 		611CA88C1CD0EC030003EA81 /* JETSAgenda.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JETSAgenda.m; sourceTree = "<group>"; };
 		611CA88D1CD0EC030003EA81 /* JETSExhibitor.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JETSExhibitor.h; sourceTree = "<group>"; };
@@ -918,6 +914,12 @@
 		61B2707B1CD146A6002274B9 /* ExhibitorsController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ExhibitorsController.h; sourceTree = "<group>"; };
 		61B2707C1CD146A6002274B9 /* ExhibitorsController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ExhibitorsController.m; sourceTree = "<group>"; };
 		61B270811CD14D7D002274B9 /* menuBar.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = menuBar.png; sourceTree = "<group>"; };
+		61EF69A01CD634810050CA3C /* exihiptors.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = exihiptors.png; path = ../../../var/root/Desktop/exihiptors.png; sourceTree = "<group>"; };
+		61EF69A31CD649BC0050CA3C /* NetWorkDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NetWorkDelegate.h; sourceTree = "<group>"; };
+		61EF69A41CD649BC0050CA3C /* NetWorkHandler.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NetWorkHandler.h; sourceTree = "<group>"; };
+		61EF69A51CD649BC0050CA3C /* NetWorkHandler.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NetWorkHandler.m; sourceTree = "<group>"; };
+		61EF69A61CD649BC0050CA3C /* NetWorkManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NetWorkManager.h; sourceTree = "<group>"; };
+		61EF69A71CD649BC0050CA3C /* NetWorkManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NetWorkManager.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -942,6 +944,7 @@
 		611CA8061CD0E8A90003EA81 = {
 			isa = PBXGroup;
 			children = (
+				61EF69A01CD634810050CA3C /* exihiptors.png */,
 				611CA8111CD0E8A90003EA81 /* MDW */,
 				611CA82B1CD0E8AA0003EA81 /* MDWTests */,
 				611CA8101CD0E8A90003EA81 /* Products */,
@@ -1085,23 +1088,11 @@
 		611CA8801CD0EA740003EA81 /* core */ = {
 			isa = PBXGroup;
 			children = (
+				61EF69A21CD649BC0050CA3C /* networkHelper */,
 				611CA8A81CD0ECEC0003EA81 /* util */,
 				611CA89A1CD0EC6F0003EA81 /* databaseModels */,
-				611CA8811CD0EAB60003EA81 /* networkHelper */,
 			);
 			path = core;
-			sourceTree = "<group>";
-		};
-		611CA8811CD0EAB60003EA81 /* networkHelper */ = {
-			isa = PBXGroup;
-			children = (
-				611CA8821CD0EB280003EA81 /* NetWorkDelegate.h */,
-				611CA8831CD0EB280003EA81 /* NetWorkHandler.h */,
-				611CA8841CD0EB280003EA81 /* NetWorkHandler.m */,
-				611CA8851CD0EB280003EA81 /* NetWorkManager.h */,
-				611CA8861CD0EB280003EA81 /* NetWorkManager.m */,
-			);
-			path = networkHelper;
 			sourceTree = "<group>";
 		};
 		611CA88A1CD0EB9C0003EA81 /* beans */ = {
@@ -1993,6 +1984,19 @@
 			path = single_views;
 			sourceTree = "<group>";
 		};
+		61EF69A21CD649BC0050CA3C /* networkHelper */ = {
+			isa = PBXGroup;
+			children = (
+				61EF69A31CD649BC0050CA3C /* NetWorkDelegate.h */,
+				61EF69A41CD649BC0050CA3C /* NetWorkHandler.h */,
+				61EF69A51CD649BC0050CA3C /* NetWorkHandler.m */,
+				61EF69A61CD649BC0050CA3C /* NetWorkManager.h */,
+				61EF69A71CD649BC0050CA3C /* NetWorkManager.m */,
+			);
+			name = networkHelper;
+			path = ../../../../../var/root/Desktop/networkHelper;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -2073,6 +2077,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				61EF69A11CD634810050CA3C /* exihiptors.png in Resources */,
 				611CA8BD1CD0EE440003EA81 /* myagenda.png in Resources */,
 				611CA84B1CD0E9BE0003EA81 /* Info.plist in Resources */,
 				618DE66E1CD4FB9F00683E46 /* tab_day_2.png in Resources */,
@@ -2127,6 +2132,7 @@
 				611CABB11CD120150003EA81 /* ZXQRCodeDecodedBitStreamParser.m in Sources */,
 				611CA8461CD0E9BE0003EA81 /* FMDatabase.m in Sources */,
 				611CABB91CD120150003EA81 /* ZXQRCodeAlignmentPatternFinder.m in Sources */,
+				61EF69A91CD649BC0050CA3C /* NetWorkManager.m in Sources */,
 				611CAB911CD120150003EA81 /* ZXUPCEANExtensionSupport.m in Sources */,
 				618DE6901CD51BEE00683E46 /* MyAgendaFirstDayController.m in Sources */,
 				611CABA61CD120150003EA81 /* ZXPDF417BarcodeRow.m in Sources */,
@@ -2149,7 +2155,6 @@
 				611CAAF21CD120150003EA81 /* ZXAztecEncoder.m in Sources */,
 				611CAB611CD120150003EA81 /* ZXAI01392xDecoder.m in Sources */,
 				611CAAFF1CD120150003EA81 /* ZXBookmarkDoCoMoResultParser.m in Sources */,
-				611CA8871CD0EB280003EA81 /* NetWorkHandler.m in Sources */,
 				611CAB581CD120150003EA81 /* ZXMaxiCodeBitMatrixParser.m in Sources */,
 				611CABAA1CD120150003EA81 /* ZXPDF417Common.m in Sources */,
 				618DE67D1CD51A7E00683E46 /* SingleSessionController.m in Sources */,
@@ -2261,6 +2266,7 @@
 				611CAB1D1CD120150003EA81 /* ZXWifiResultParser.m in Sources */,
 				611CAB4D1CD120150003EA81 /* ZXDataMatrixDefaultPlacement.m in Sources */,
 				611CAB861CD120150003EA81 /* ZXEANManufacturerOrgSupport.m in Sources */,
+				61EF69A81CD649BC0050CA3C /* NetWorkHandler.m in Sources */,
 				611CAB6F1CD120150003EA81 /* ZXRSSExpandedFieldParser.m in Sources */,
 				611CAB9E1CD120150003EA81 /* ZXPDF417DetectionResult.m in Sources */,
 				611CABAB1CD120150003EA81 /* ZXPDF417Reader.m in Sources */,
@@ -2377,7 +2383,6 @@
 				611CAB6E1CD120150003EA81 /* ZXRSSExpandedDecodedObject.m in Sources */,
 				611CAB291CD120150003EA81 /* ZXBitMatrix.m in Sources */,
 				611CAB831CD120150003EA81 /* ZXEAN13Writer.m in Sources */,
-				611CA8881CD0EB280003EA81 /* NetWorkManager.m in Sources */,
 				611CAB521CD120150003EA81 /* ZXDataMatrixSymbolInfo.m in Sources */,
 				611CAAF31CD120150003EA81 /* ZXAztecHighLevelEncoder.m in Sources */,
 				611CAB841CD120150003EA81 /* ZXEAN8Reader.m in Sources */,

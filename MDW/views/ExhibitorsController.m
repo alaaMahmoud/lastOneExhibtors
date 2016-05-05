@@ -27,6 +27,7 @@
 
 
 - (void)viewDidLoad {
+    
     [super viewDidLoad];
     self.refreshControl=[[UIRefreshControl alloc] init];
     self.refreshControl.backgroundColor=[UIColor purpleColor];
@@ -34,7 +35,6 @@
     
     [self.refreshControl addTarget:self action:@selector(getLatestExhibitors) forControlEvents:UIControlEventValueChanged];
       [self getLatestExhibitors];
-    //[self performSelectorOnMainThread:@selector(reloadData) withObject:nil waitUntilDone:NO];
    
     
     _barBtn.target = self.revealViewController;
@@ -64,12 +64,9 @@
 
     responseData =data;
     
-    NSLog(@"%@",data);
-    NSLog(@"%d",[responseData count]);
-    
     [self.tableView  reloadData];
     [activity stopAnimating];
-    //[self performSelectorOnMainThread:@selector(reloadData) withObject:nil waitUntilDone:NO];
+    
     
     
     
@@ -89,7 +86,7 @@
 
 -(void)getLatestExhibitors{
     [self performSelectorOnMainThread:@selector(reloadData) withObject:nil waitUntilDone:NO];
-    //[self handleSuccess :responseData];
+    
     [self.refreshControl endRefreshing];
     
     
@@ -140,11 +137,9 @@
     
     [cell.textLabel setText:[[responseData objectAtIndex:indexPath.row]companyName]];
     cell.imageView.image = [UIImage imageNamed:@"exihiptors.png"];
-  //  cell.imageView.image = [UIImage imageWithData:[responseData[indexPath.row]imageEx]];
     
     cell.backgroundColor=[UIColor clearColor];
-  //  UIImage *image=[UIImage imageWithData:[responseData valueForKey:@"imageURL"]];
-   // cell.imageView.image=image;
+  
     // Configure the cell...
     
     return cell;

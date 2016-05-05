@@ -34,11 +34,7 @@
     
     [self.refreshControl addTarget:self action:@selector(getLatestExhibitors) forControlEvents:UIControlEventValueChanged];
       [self getLatestExhibitors];
-    [self performSelectorOnMainThread:@selector(reloadData) withObject:nil waitUntilDone:NO];
-  
-    
-    
-
+    //[self performSelectorOnMainThread:@selector(reloadData) withObject:nil waitUntilDone:NO];
    
     
     _barBtn.target = self.revealViewController;
@@ -92,8 +88,9 @@
 }
 
 -(void)getLatestExhibitors{
-    //[self performSelectorOnMainThread:@selector(reloadData) withObject:nil waitUntilDone:NO];
-    [self handleSuccess :responseData];
+    [self performSelectorOnMainThread:@selector(reloadData) withObject:nil waitUntilDone:NO];
+    //[self handleSuccess :responseData];
+    [self.refreshControl endRefreshing];
     
     
     
@@ -113,7 +110,7 @@
         NSDictionary *attrsDictionary=[NSDictionary dictionaryWithObject:[UIColor whiteColor] forKey:NSForegroundColorAttributeName];
         NSAttributedString *attributedTitle=[[NSAttributedString alloc]initWithString:title attributes:attrsDictionary];
         self.refreshControl.attributedTitle=attributedTitle;
-        [self.refreshControl endRefreshing];
+        
         
     }
 }
